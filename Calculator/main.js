@@ -3,10 +3,17 @@ var app = new Vue({
 	data:{
 		num1: '',
 		num2: '',
-		checker:'',
+		checked:'',
 		finans:'',
-		operation:''
-		},
+		return:{
+			checked: null
+		}
+	},
+	watch: {
+		checked(newValue){
+			rad();
+		}
+	},
 	computed:{
 		multip: function(){
 			answer = parseInt(app._data.num1) * parseInt(app._data.num2);
@@ -27,24 +34,20 @@ var app = new Vue({
 	}
 })
 
+ function rad(){
+ 	if (app.checked == "mul") {
+ 		app.finans = app.multip;
+ 	}
+ 	else if (app.checked == "add") {
+ 		app.finans = app.addit;
+ 	}
+ 	else if (app.checked == "div") {
+ 		app.finans = app.divis;
+ 	}
+ 	else{
+ 			app.finans = app.subtr;
+ 	}
+ }
 
-function radioVal (){
-		if (app._data.checker == "mul") {
-			app._data.finans = app.multip;
-		}
-		else if (app._data.checker == "div") {
-			app._data.finans = app.divis;
-		}
-		else if (app._data.checker == "sub") {
-			app._data.finans = app.subtr;
-		}	
-		else if (app._data.checker == "add") {
-			app._data.finans = app.addit;
-		}
-		else {
-			app._data.operation == "operation";
-			console.log("Error!! Kindly check your input!");
-		}
-	}
 
 

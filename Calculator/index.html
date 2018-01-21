@@ -10,7 +10,7 @@
 			<div>
 				<h3 class="head">Welcome to the Calculator App</h3>
 				<br>
-				<p>Please fill in the following details and press equals (=)</p>
+				<p>Please fill in the following details and select an operation</p>
 				<input type="textbox" name="number1" placeholder="Enter the first number" id="number1" class="form-control" v-model="num1">
 				<br>
 				
@@ -19,24 +19,22 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-5">
-					<input type="radio" id="mul" value="mul" v-model="checker">
+					<input type="radio"  value="mul" v-model="checked" >
 					<label for="multiplication">Multiplication</label> 
 					<br>
 					
-					<input type="radio" id="add" value="add" v-model="checker">
+					<input type="radio" value="add" v-model="checked">
 					<label for="addition">Addition</label> 
 					<br>
 					
-					<input type="radio" id="div" value="div" v-model="checker">
+					<input type="radio" value="div" v-model="checked">
 					<label for="division">Division</label> 
 					<br>
 					
-					<input type="radio" id="sub" value="sub" v-model="checker">
+					<input type="radio" value="sub" v-model="checked">
 					<label for="subtraction">Subtraction</label> 
 					<br>
 					
-					<br>
-					<button class="btn btn-primary" onclick="radioVal();">Equals <span>&#61;</span></button>
 					<br>
 			</div>
 			<div class="col-sm-7 text-sm-center" >
